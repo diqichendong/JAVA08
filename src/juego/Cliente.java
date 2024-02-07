@@ -57,6 +57,12 @@ public class Cliente {
                     System.exit(0);
                 }
 
+                //Comprobar empate
+                if (tablero.isEmpate()) {
+                    JOptionPane.showMessageDialog(frame, "Empate");
+                    System.exit(0);
+                }
+
                 // Esperar movimiento
                 while(juego.isTurno()){}
 
@@ -68,6 +74,12 @@ public class Cliente {
                 oos.flush();
                 if (tablero.getGanador() != 0 && tablero.getGanador() == jugador) {
                     JOptionPane.showMessageDialog(frame, "¡HAS GANADO!");
+                    System.exit(0);
+                }
+
+                // Comprobar empate
+                if (tablero.isEmpate()) {
+                    JOptionPane.showMessageDialog(frame, "Empate");
                     System.exit(0);
                 }
 

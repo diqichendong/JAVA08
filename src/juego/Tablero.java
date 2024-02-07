@@ -43,4 +43,17 @@ public class Tablero implements Serializable {
 
         return 0;
     }
+
+    public boolean isEmpate() {
+        boolean res = true;
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                if (tablero[i][j] == 0) {
+                    res = false;
+                    break;
+                }
+            }
+        }
+        return getGanador() == 0 && res;
+    }
 }

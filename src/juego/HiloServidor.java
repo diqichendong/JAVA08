@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.net.SocketException;
 
 public class HiloServidor extends Thread {
 
@@ -59,6 +60,7 @@ public class HiloServidor extends Thread {
                     break;
                 }
             }
+        } catch (SocketException e) {
         } catch (EOFException e) {
         } catch (ClassNotFoundException e) {
         } catch (IOException e) {
